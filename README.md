@@ -60,6 +60,7 @@ npm install
 3. Set up environment variables:
 
    - See the Environment Setup section below for detailed instructions
+   - Copy admin sdk from firebase to `apps/backend/` and save as to `ebuddy-admin-sdk.json`
 
 4. Start development servers:
 
@@ -114,14 +115,7 @@ firebase login
 # Navigate to the backend directory
 cd apps/backend
 
-# Initialize Firebase in the backend directory (if not already done)
-firebase init functions
-
-# When prompted:
-# - Select your Firebase project
-# - Choose JavaScript or TypeScript based on your preference
-# - Say YES to ESLint
-# - Choose to install dependencies with npm
+#
 ```
 
 3. Set up Firebase Functions configuration:
