@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "source": "dist"
+  },
+  "emulators": {
+    "ui": {
+      "enabled": true
+    },
+    "functions": {
+      "port": 5001
+    }
+  }
+}

@@ -2,25 +2,43 @@
   "name": "backend-repo",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "ts-node src/app.ts",
-    "dev": "ts-node src/app.ts",
-    "build": "tsc"
+    "dev": "npx vite build && firebase emulators:start --only functions",
+    "dev1": "npx vite build --watch",
+    "build": "tsc && cp package.json dist/apps/backend/",
+    "deploy": "firebase deploy --only functions:api"
   },
   "keywords": [],
   "author": "Muhammad Adil [ivgcomunity@gmail.com]",
   "license": "ISC",
   "description": "",
+  "engines": {
+    "node": "18"
+  },
+  "files": [
+    "build"
+  ],
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "dependencies": {
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "firebase-admin": "^13.4.0",
+    "firebase-functions": "^6.3.2",
     "shared": "*"
   },
   "devDependencies": {
     "@types/express": "^5.0.2",
     "@types/node": "^22.15.21",
+    "@types/rollup-plugin-generate-package-json": "^3.2.9",
+    "rollup-plugin-generate-package-json": "^3.2.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   }
 }
