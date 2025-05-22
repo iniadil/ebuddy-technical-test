@@ -1,84 +1,135 @@
-# Turborepo starter
+# eBuddy.gg
 
-This Turborepo starter is maintained by the Turborepo core team.
+[eBuddy.gg] this is a monorepo project built with Turborepo, containing both frontend and backend applications for a social gaming platform. this project purpose for **My Technical Test Before Interview**.
 
-## Using this example
+## 🚀 What's inside?
 
-Run the following command:
+This Turborepo includes the following apps and packages:
 
-```sh
-npx create-turbo@latest
+### Apps
+
+- `frontend`: A Next.js application with React, Material UI, and Firebase integration
+- `backend`: An Express.js application running on Firebase Functions
+
+### Packages
+
+- `shared`: Shared types and utilities used by both frontend and backend
+- `eslint-config`: ESLint configurations for the monorepo
+- `typescript-config`: TypeScript configurations for the monorepo
+- `ui`: Shared UI components
+
+## 🛠️ Tech Stack
+
+- **Frontend**:
+
+  - Next.js
+  - React
+  - Material UI
+  - Redux Toolkit
+  - Firebase Authentication
+  - TypeScript
+  - Tailwind CSS
+
+- **Backend**:
+  - Express.js
+  - Firebase Functions
+  - TypeScript
+  - Vite (for building)
+
+## 📋 Prerequisites
+
+- Node.js 18 or later
+- npm 10.8.2 or later
+- Firebase CLI (for backend development and deployment)
+
+## 🏁 Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd turbo-repo
 ```
 
-## What's inside?
+2. Install dependencies:
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```bash
+npm install
 ```
 
-### Develop
+3. Set up environment variables:
 
-To develop all apps and packages, run the following command:
+   - Create `.env` files in the respective app directories (see their READMEs for details)
 
-```
-cd my-turborepo
-pnpm dev
-```
+4. Start development servers:
 
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```bash
+npm run dev
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+This will start both frontend and backend development servers.
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+## 🏗️ Building for Production
+
+Build all apps and packages:
+
+```bash
+npm run build
+```
+
+## 🧪 Type Checking
+
+Check types across the monorepo:
+
+```bash
+npm run check-types
+```
+
+## 🔍 Linting
+
+Run linting across the monorepo:
+
+```bash
+npm run lint
+```
+
+## 📁 Project Structure
 
 ```
-npx turbo link
+turbo-repo/
+├── apps/
+│   ├── frontend/      # Next.js application
+│   └── backend/       # Express.js + Firebase Functions
+├── packages/
+│   ├── shared/        # Shared utilities and types
+│   ├── ui/            # Shared UI components
+│   ├── eslint-config/ # ESLint configurations
+│   └── typescript-config/ # TypeScript configurations
+├── package.json       # Root package.json
+└── turbo.json         # Turborepo configuration
 ```
 
-## Useful Links
+## 🔄 Turborepo Features
 
-Learn more about the power of Turborepo:
+This project uses several Turborepo features:
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+- **Task Dependencies**: Tasks are run in the correct order based on dependencies
+- **Caching**: Build outputs are cached to speed up future builds
+- **Workspaces**: npm workspaces for package management
+
+## 📝 License
+
+ISC - See the project's license file for details.
+
+## 👨‍💻 Author
+
+Muhammad Adil [ivgcomunity@gmail.com]
+
+## 🔗 Useful Links
+
+Learn more about the technologies used in this project:
+
+- [Turborepo Documentation](https://turborepo.com/docs)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [Express.js Documentation](https://expressjs.com)
