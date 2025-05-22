@@ -93,24 +93,16 @@ NEXT_PUBLIC_AUTH_COOKIE_NAME=ebuddy_auth_token
 
 ### Backend Environment Setup
 
-1. Create a `.env` file in the `apps/backend` directory with these variables:
+1. Setup Firebase Admin SDK:
 
-```
-# Firebase Admin Configuration
-FIREBASE_PROJECT_ID=your_firebase_project_id
-FIREBASE_PRIVATE_KEY="your_firebase_admin_private_key"
-FIREBASE_CLIENT_EMAIL=your_firebase_client_email
+   - Go to your Firebase project settings
+   - Navigate to "Service accounts" tab
+   - Click "Generate new private key" button
+   - Save the downloaded file as `ebuddy-admin-sdk.json` in the `apps/backend` directory
 
-# Server Configuration
-PORT=5001
-NODE_ENV=development
+   This file is used in `src/config/firebase.ts` to initialize the Firebase Admin SDK.
 
-# JWT Configuration
-JWT_SECRET=your_jwt_secret_key
-JWT_EXPIRES_IN=7d
-```
-
-2. Set up Firebase Functions local development environment:
+2. Configure Firebase project:
 
 ```bash
 # Install Firebase CLI if not already installed
@@ -122,6 +114,26 @@ firebase login
 # Navigate to the backend directory
 cd apps/backend
 
+# Initialize Firebase in the backend directory (if not already done)
+firebase init functions
+
+# When prompted:
+# - Select your Firebase project
+# - Choose JavaScript or TypeScript based on your preference
+# - Say YES to ESLint
+# - Choose to install dependencies with npm
+```
+
+3. Set up Firebase Functions configuration:
+
+```bash
+# Set the appropriate configuration values for your project
+firebase functions:config:set firebase.project_id=your-firebase-project-id
+```
+
+4. Run Firebase Functions locally:
+
+```bash
 # Start Firebase emulators
 firebase emulators:start --only functions
 
@@ -130,7 +142,7 @@ cd apps/backend
 npm run dev
 ```
 
-3. For deploying Firebase Functions:
+5. For deploying Firebase Functions:
 
 ```bash
 # Deploy all Firebase Functions
